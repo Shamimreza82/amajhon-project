@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { thumbnail, description, title, price } = product;
+  const { id, thumbnail, description, title, price } = product;
+    const navegate = useNavigate()
+
+  const handleid =() => {
+    navegate(`/productDetiles/${id}`)
+  }
   return (
     <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
@@ -79,6 +85,10 @@ const Product = ({ product }) => {
           >
             Add to cart
           </a>
+          
+        </div>
+        <div className="flex justify-center">
+            <button onClick={handleid} className="bg-slate-400 p-2 rounded-md text-lg font-bold text-white ">More detiles</button>
         </div>
       </div>
     </div>

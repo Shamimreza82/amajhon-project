@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet, useNavigation } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation, useNavigation } from 'react-router-dom';
 import Footer from '../component/Footer/Footer';
 
 const MainLayout = () => {
@@ -41,7 +41,7 @@ const MainLayout = () => {
                 </li>
             </ul>
            </nav>
-           <div className='flex justify-center items-center'>
+           <div className='flex justify-center items-center min-h-screen'>
            {
             navigation.state === 'loading' ?  
             <div role="status">
